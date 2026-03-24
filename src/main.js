@@ -78,14 +78,17 @@ loadMoreBtn.addEventListener('click', async () => {
 
     const totalPages = Math.ceil(data.totalHits / perPage);
 
-    if (page >= totalPages) {
-      hideLoadMoreBtn();
+   if (page >= totalPages) {
+  hideLoadMoreBtn();
 
-      iziToast.info({
-        message: "We're sorry, but you've reached the end of search results.",
-        position: 'topRight',
-      });
-    }
+  iziToast.info({
+    message: "We're sorry, but you've reached the end of search results.",
+    position: 'topRight',
+  });
+
+} else {
+  showLoadMoreBtn(); 
+}
 
     const cardHeight = document
       .querySelector('.gallery-item')
